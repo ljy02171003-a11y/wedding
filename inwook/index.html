@@ -209,8 +209,7 @@ a{color:inherit}
 .mapbox .lbl{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-size:11.5px;color:var(--mute);letter-spacing:.06em}
 .navs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
 .navs a{text-decoration:none;text-align:center;border:1px solid var(--line);border-radius:4px;padding:11px 4px;font-size:13px;background:#fff;display:flex;align-items:center;justify-content:center;gap:6px}
-.navs a i{width:10px;height:10px;border-radius:3px;display:inline-block}
-.navs .nv i{background:#2db400}.navs .kk i{background:#fae100}.navs .tm i{background:#e23e57}
+.navs a svg{width:18px;height:18px;flex:none}
 .how{margin-top:18px;display:grid;gap:10px}
 .how .h{display:grid;grid-template-columns:62px 1fr;gap:10px;font-size:13.5px;align-items:start}
 .how .h b{font-weight:500;color:var(--gold);font-size:12.5px;letter-spacing:.1em;padding-top:2px}
@@ -292,7 +291,6 @@ img{max-width:100%}
   <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
 </button>
 <audio id="audio" loop autoplay preload="auto" src="../bgm.mp3"></audio>
-<div class="bgm-hint" id="bgmhint" hidden>화면을 터치하면 음악이 흐릅니다</div>
 
 <!-- GREETING -->
 <section class="rv">
@@ -427,9 +425,9 @@ img{max-width:100%}
       <div class="tel">02-3474-5000</div>
       <a class="mapimg" href="https://naver.me/xFLuN7bN" target="_blank" rel="noopener"><img src="../img/map-wv.jpg" alt="더화이트베일 위치 지도"><span>네이버 지도에서 보기</span></a>
       <div class="navs">
-        <a class="nv" href="https://naver.me/xFLuN7bN" target="_blank" rel="noopener"><i></i>네이버지도</a>
-        <a class="kk" href="https://map.kakao.com/link/search/%EB%8D%94%ED%99%94%EC%9D%B4%ED%8A%B8%EB%B2%A0%EC%9D%BC" target="_blank" rel="noopener"><i></i>카카오맵</a>
-        <a class="tm" href="tmap://search?name=%EB%8D%94%ED%99%94%EC%9D%B4%ED%8A%B8%EB%B2%A0%EC%9D%BC"><i></i>티맵</a>
+        <a class="nv" href="https://naver.me/xFLuN7bN" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#03c75a"/><path d="M6.5 6h3.6l3.9 5.6V6h3.5v12h-3.6L10 12.4V18H6.5z" fill="#fff"/></svg>네이버지도</a>
+        <a class="kk" href="https://map.kakao.com/link/search/%EB%8D%94%ED%99%94%EC%9D%B4%ED%8A%B8%EB%B2%A0%EC%9D%BC" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#fee500"/><path d="M12 5.5c-3.6 0-6.5 2.3-6.5 5.2 0 1.9 1.2 3.5 3.1 4.4l-.7 2.7c0 .2.2.3.4.2l3.1-2.1c.2 0 .4 0 .6 0 3.6 0 6.5-2.3 6.5-5.2S15.6 5.5 12 5.5z" fill="#191919"/></svg>카카오맵</a>
+        <a class="tm" href="tmap://search?name=%EB%8D%94%ED%99%94%EC%9D%B4%ED%8A%B8%EB%B2%A0%EC%9D%BC"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#ec2d66"/><path d="M6 6.5h12v3.2h-4.3V18h-3.4V9.7H6z" fill="#fff"/></svg>티맵</a>
       </div>
       <div class="how">
         <div class="h"><b>지하철</b><p>3호선 남부터미널역 4-1번 출구 바로 앞<br>4번 출구에서 도보 2분</p></div>
@@ -446,9 +444,9 @@ img{max-width:100%}
       <div class="tel">061-727-0046</div>
       <a class="mapimg" href="https://map.naver.com/p/entry/place/1248643935" target="_blank" rel="noopener"><img src="../img/map-mr.jpg" alt="순천 마리나웨딩 위치 지도"><span>네이버 지도에서 보기</span></a>
       <div class="navs">
-        <a class="nv" href="https://map.naver.com/p/entry/place/1248643935" target="_blank" rel="noopener"><i></i>네이버지도</a>
-        <a class="kk" href="https://map.kakao.com/link/search/%EC%88%9C%EC%B2%9C%20%EB%A7%88%EB%A6%AC%EB%82%98%EC%9B%A8%EB%94%A9" target="_blank" rel="noopener"><i></i>카카오맵</a>
-        <a class="tm" href="tmap://search?name=%EC%88%9C%EC%B2%9C%20%EB%A7%88%EB%A6%AC%EB%82%98%EC%9B%A8%EB%94%A9"><i></i>티맵</a>
+        <a class="nv" href="https://map.naver.com/p/entry/place/1248643935" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#03c75a"/><path d="M6.5 6h3.6l3.9 5.6V6h3.5v12h-3.6L10 12.4V18H6.5z" fill="#fff"/></svg>네이버지도</a>
+        <a class="kk" href="https://map.kakao.com/link/search/%EC%88%9C%EC%B2%9C%20%EB%A7%88%EB%A6%AC%EB%82%98%EC%9B%A8%EB%94%A9" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#fee500"/><path d="M12 5.5c-3.6 0-6.5 2.3-6.5 5.2 0 1.9 1.2 3.5 3.1 4.4l-.7 2.7c0 .2.2.3.4.2l3.1-2.1c.2 0 .4 0 .6 0 3.6 0 6.5-2.3 6.5-5.2S15.6 5.5 12 5.5z" fill="#191919"/></svg>카카오맵</a>
+        <a class="tm" href="tmap://search?name=%EC%88%9C%EC%B2%9C%20%EB%A7%88%EB%A6%AC%EB%82%98%EC%9B%A8%EB%94%A9"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#ec2d66"/><path d="M6 6.5h12v3.2h-4.3V18h-3.4V9.7H6z" fill="#fff"/></svg>티맵</a>
       </div>
       <div class="how">
         <div class="h"><b>안내</b><p>순천 지역 하객분들을 위한 피로연입니다.<br>결혼식과 피로연 중 편하신 날에 와 주세요.</p></div>
@@ -528,10 +526,9 @@ setTimeout(()=>document.querySelectorAll('.rv').forEach(el=>el.classList.add('in
 
 /* bgm: button + first tap anywhere starts music */
 const bgm=$('#bgm'),audio=$('#audio');audio.volume=.6;
-const hint=$('#bgmhint');
-function playBgm(){return audio.play().then(()=>{bgm.classList.add('on');hint.hidden=true}).catch(()=>{hint.hidden=false})}
+function playBgm(){return audio.play().then(()=>{bgm.classList.add('on')}).catch(()=>{})}
 playBgm();
-audio.addEventListener('playing',()=>{bgm.classList.add('on');hint.hidden=true});
+audio.addEventListener('playing',()=>{bgm.classList.add('on')});
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&audio.paused&&!audio._userStopped)playBgm()});
 bgm.addEventListener('click',e=>{e.stopPropagation();if(audio.paused)playBgm();else{audio.pause();bgm.classList.remove('on')}});
 const firstTap=()=>{if(audio.paused&&!audio._userStopped)playBgm();document.removeEventListener('touchend',firstTap);document.removeEventListener('click',firstTap)};
@@ -575,7 +572,7 @@ function tick(){
 tick();setInterval(tick,1000);
 
 /* gallery: 21 photos */
-const order=[13,32,8, 7,17,18,31,19, 1,20,28,21, 3,22,15,10,24,30,11,29,6];
+const order=[13,32,8, 7,17,14,31,19, 1,20,28,21, 3,22,15,10,24,30,11,29,6];
 const grid=$('#grid');
 order.forEach((n,i)=>{const b=document.createElement('button');b.setAttribute('aria-label','사진 '+(i+1));const im=document.createElement('img');im.loading='lazy';im.src='../img/'+String(n).padStart(2,'0')+'.jpg';im.alt='';b.appendChild(im);b.addEventListener('click',()=>openLb(i));grid.appendChild(b)});
 
