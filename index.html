@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <meta property="og:type" content="website">
-<meta property="og:title" content="인욱 ♥ 자연 결혼합니다">
-<meta property="og:description" content="2026년 12월 19일 토요일 낮 12시 30분 · 더화이트베일 화이트베일홀">
-<meta property="og:image" content="img/og.jpg">
+<meta property="og:title" content="양인욱 ♥ 이자연 결혼합니다">
+<meta property="og:description" content="2026년 12월 19일 토요일 낮 12시 30분 · 더화이트베일 1층 화이트베일홀">
+<meta property="og:image" content="https://ljy02171003-a11y.github.io/wedding/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta name="description" content="2026년 12월 19일 토요일 낮 12시 30분 · 더화이트베일 화이트베일홀">
+<meta name="description" content="2026년 12월 19일 토요일 낮 12시 30분 · 더화이트베일 1층 화이트베일홀">
 <link rel="icon" href="data:,">
 <title>인욱 ♥ 자연 결혼합니다</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap">
@@ -87,6 +87,7 @@ a{color:inherit}
 @media (prefers-reduced-motion:reduce){.cover-top .eyebrow,.names-en,.cover-date .big,.cover-date .sub,.names .ch,.cover-photo img,.script,.cover-date .rule::before,.cover-date .rule::after,.cover-date .rule i{animation:none;opacity:1;width:44px;clip-path:none}}
 
 /* bgm */
+.bgm-hint{position:fixed;top:calc(env(safe-area-inset-top,0px) + 62px);right:calc(env(safe-area-inset-right,0px) + 14px);z-index:20;font-size:11.5px;letter-spacing:.06em;color:var(--gold-soft);background:rgba(18,22,20,.6);padding:5px 10px;border-radius:999px;backdrop-filter:blur(6px);pointer-events:none;animation:rise .8s ease .6s both}
 .bgm{position:fixed;top:calc(env(safe-area-inset-top,0px) + 14px);right:calc(env(safe-area-inset-right,0px) + 14px);z-index:20;width:40px;height:40px;border-radius:50%;border:1px solid rgba(195,168,107,.6);background:rgba(18,22,20,.55);backdrop-filter:blur(8px);display:grid;place-items:center;padding:0;color:var(--gold-soft)}
 .bgm.light{background:rgba(247,244,238,.85);color:var(--gold);border-color:var(--line)}
 .bgm svg{width:18px;height:18px}
@@ -251,9 +252,9 @@ img{max-width:100%}
 [hidden]{display:none!important}
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 </style>
-<!-- 방명록 저장소(Firebase). firebase-config.js 에 설정값을 넣으면 활성화됩니다 -->
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js" crossorigin="anonymous"></script>
 <script src="firebase-config.js"></script>
 </head>
 <body>
@@ -279,7 +280,8 @@ img{max-width:100%}
   <svg class="note" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
   <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
 </button>
-<audio id="audio" loop preload="auto" src="bgm.mp3"></audio>
+<audio id="audio" loop autoplay preload="auto" src="bgm.mp3"></audio>
+<div class="bgm-hint" id="bgmhint" hidden>화면을 터치하면 음악이 흐릅니다</div>
 
 <!-- GREETING -->
 <section class="rv">
@@ -390,7 +392,7 @@ img{max-width:100%}
 </section>
 
 <!-- LOCATION -->
-<section class="rv">
+<section class="rv" id="location">
   <p class="eyebrow">Location</p>
   <h2>오시는 길</h2>
   <div class="loc">
@@ -474,7 +476,7 @@ img{max-width:100%}
 <footer class="rv">
   <div class="rule"><i></i></div>
   <p class="verse" style="margin-top:28px">함께 걸어갈 날들에<br>여러분의 축복이 더해지길 바랍니다.</p>
-  <button class="share" id="share">
+  <button class="share kakao" id="kakao" hidden style="margin-right:8px"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.8 5.2 4.6 6.6l-1 3.9c-.1.3.3.6.6.4l4.6-3.1c.4 0 .8.1 1.2.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg>카카오톡으로 전하기</button><button class="share" id="share">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
     청첩장 링크 복사</button>
   <p class="end">Inwook &amp; Jayeon · 2026.12.19</p>
@@ -503,7 +505,11 @@ setTimeout(()=>document.querySelectorAll('.rv').forEach(el=>el.classList.add('in
 
 /* bgm: button + first tap anywhere starts music */
 const bgm=$('#bgm'),audio=$('#audio');audio.volume=.6;
-function playBgm(){audio.play().then(()=>bgm.classList.add('on')).catch(()=>{})}
+const hint=$('#bgmhint');
+function playBgm(){return audio.play().then(()=>{bgm.classList.add('on');hint.hidden=true}).catch(()=>{hint.hidden=false})}
+playBgm();
+audio.addEventListener('playing',()=>{bgm.classList.add('on');hint.hidden=true});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&audio.paused&&!audio._userStopped)playBgm()});
 bgm.addEventListener('click',e=>{e.stopPropagation();if(audio.paused)playBgm();else{audio.pause();bgm.classList.remove('on')}});
 const firstTap=()=>{if(audio.paused&&!audio._userStopped)playBgm();document.removeEventListener('touchend',firstTap);document.removeEventListener('click',firstTap)};
 document.addEventListener('touchend',firstTap,{once:true});document.addEventListener('click',firstTap,{once:true});
@@ -518,6 +524,11 @@ const M='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width
 document.querySelectorAll('.cl[data-tel]').forEach(el=>{const t=el.dataset.tel;el.querySelector('.ic').innerHTML='<a href="tel:'+t+'" aria-label="전화">'+P+'</a><a href="sms:'+t+'" aria-label="문자">'+M+'</a>'});
 $('#ctog').addEventListener('click',e=>{const c=$('#contact');c.hidden=!c.hidden;e.currentTarget.setAttribute('aria-expanded',String(!c.hidden))});
 
+/* kakao share (needs window.KAKAO_JS_KEY) */
+(()=>{if(!(window.Kakao&&window.KAKAO_JS_KEY))return;try{if(!Kakao.isInitialized())Kakao.init(window.KAKAO_JS_KEY)}catch(e){return}
+  const b=$('#kakao');b.hidden=false;const base=location.href.split('#')[0];
+  b.addEventListener('click',()=>{Kakao.Share.sendDefault({objectType:'feed',content:{title:'양인욱 ♥ 이자연 결혼합니다',description:'2026년 12월 19일 토요일 낮 12시 30분\n더화이트베일 1층 화이트베일홀',imageUrl:base+'img/og.jpg',link:{mobileWebUrl:base,webUrl:base}},buttons:[{title:'청첩장 보기',link:{mobileWebUrl:base,webUrl:base}},{title:'위치 보기',link:{mobileWebUrl:base+'#location',webUrl:base+'#location'}}]})});
+})();
 /* copy */
 async function copyText(txt){
   try{await navigator.clipboard.writeText(txt);return true}catch(e){
@@ -541,7 +552,7 @@ function tick(){
 tick();setInterval(tick,1000);
 
 /* gallery: 21 photos */
-const order=[8,32,13, 9,18,31,14, 21,20,28,1, 6,11,30, 24,4,25,3,10,12,22];
+const order=[8,32,13, 9,18,7,31,14, 21,20,28,1, 6,11,30, 24,4,25,3,10,12];
 const grid=$('#grid');
 order.forEach((n,i)=>{const b=document.createElement('button');b.setAttribute('aria-label','사진 '+(i+1));const im=document.createElement('img');im.loading='lazy';im.src='img/'+String(n).padStart(2,'0')+'.jpg';im.alt='';b.appendChild(im);b.addEventListener('click',()=>openLb(i));grid.appendChild(b)});
 
